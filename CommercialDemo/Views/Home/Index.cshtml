@@ -1,0 +1,66 @@
+﻿@{
+	Layout = null;
+	Response.Headers["X-UA-Compatible"] = "IE=10";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Magnus Martensson Consulting</title>
+	<link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<meta name="viewport" content="width=device-width" />
+	@Styles.Render("~/Content/css")
+	@Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+	<div data-bind="visible: loading">Loading...</div>
+	<div style="display: none" data-bind="visible: true" class="container body-content">
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+						<div class="navbar-brand">Need to embrace Cloud Computing and revamp your organization, applications and services? Contact a true expert!</div>
+				</div>
+			</div>
+		</div>
+
+		<div data-bind="foreach: errors" class="padding-error">
+			<p class="text-danger" data-bind="text: $data"></p>
+		</div>
+
+		<div class="jumbotron">
+			<h1>Magnus Martensson Consulting</h1>
+			<p><a href="http://twitter.com">@@noopman</a> | <a href="mailto:magnus@magnusmartensson.com">magnus@magnusmartensson.com</a> | <a href="callto:magnus@magnusmartensson.com">+46 768 51 00 36</a></p>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<h2>Strategic advice</h2>
+				<p>
+					As a Microsoft Partner Magnus is sent into the field to offer strategic advice and guidance on what the change can mean for individual organizations, how to prepare for this change and understand the true value of Cloud Computing.
+				</p>
+			</div>
+			<div class="col-md-4">
+				<h2>Architecture and coding</h2>
+				<p>
+					A true techie loves to get down with architecture and code. Magnus has built and migrated countless apps and services to Windows Azure and has more than a decade of architecture and code experience.
+				</p>
+			</div>
+			<div class="col-md-4">
+				<h2>Training</h2>
+				<p>
+					There is stuff your developers need to know about Windows Azure in order to build and maintain your applications and services in the most cost effective and profficient way in the future. Custom on-site training is a cost and time saver!
+				</p>
+			</div>
+		</div>
+
+		<hr />
+		<footer>
+			<p>&copy; @DateTime.Now.Year - Magnus Martensson Consulting</p>
+		</footer>
+	</div>
+
+	@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/knockout")
+	@Scripts.Render("~/bundles/app")
+	@Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>
